@@ -1,3 +1,5 @@
+var dataService = require('./data-service');
+
 var express = require('express'); // Express web server framework
 var app = express();
 
