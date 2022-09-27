@@ -1,4 +1,4 @@
-var dataService = require('./data-service');
+var dataService = require('./data-service'); // require data-service file 
 
 var express = require('express'); // Express web server framework
 var app = express();
@@ -21,6 +21,46 @@ app.get('/', function(req, res) {
 app.get('/about', function(req, res) {
   res.sendFile(__dirname + '/views/about.html');
 });
+
+
+// Additional Routes, Step 3
+app.get("/employees", (req, res) => {
+  // TODO: get list of all employees
+  dataService.getAllEmployees()
+  .then((data) => {
+      res.json(data);
+  })
+  .catch((err) => {
+      res.json({message: err});
+  });
+});
+
+app.get("/managers", (req, res) => {
+  // TODO: get list of all employees whose isManager property is true
+  dataService.getManagers()
+  .then((data) => {
+      res.json(data);
+  })
+  .catch((err) => {
+      res.json({message: err});
+  });
+});
+
+app.get("/departments", (req, res) => {
+  // TODO: get list of all departments
+  dataService.getDepartments()
+  .then((data) => {
+      res.json(data);
+  })
+  .catch((err) => {
+      res.json({message: err});
+  });
+});
+
+app.use((req, res) => {
+  res.status(404).send("Page Not Found");
+});
+
 
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
