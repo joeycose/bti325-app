@@ -24,7 +24,7 @@ app.get('/about', function(req, res) {
 
 
 // Additional Routes, Step 3
-app.get("/employees", (req, res) => {
+app.get("employees", (req, res) => {
   // TODO: get list of all employees
   dataService.getAllEmployees()
   .then((data) => {
