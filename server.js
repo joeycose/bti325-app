@@ -1,3 +1,9 @@
+/************************************************************************* * BTI325– Assignment 2
+* I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part * of this assignment has been copied manually or electronically from any other source
+* (including 3rd party web sites) or distributed to other students. *
+* Name: Giusepp Cosentino Student ID: 184801215 Date: Sun Oct 9, 2022 *
+* Your app’s URL (from Cyclic) : ______________________________________________ * *************************************************************************/
+
 var dataService = require('./data-service'); // require data-service file 
 
 var express = require('express'); // Express web server framework
@@ -24,7 +30,7 @@ app.get('/about', function(req, res) {
 
 
 // Additional Routes, Step 3
-app.get("employees", (req, res) => {
+app.get("/employees", (req, res) => {
   // TODO: get list of all employees
   dataService.getAllEmployees()
   .then((data) => {
